@@ -1,0 +1,26 @@
+<div class="mesgs">
+    <div class="msg_history">
+        <div *ngFor="let message of messages">
+            <div *ngIf="message.userId === user.userId">
+                <app-outgoing-message
+                        [message]="message.message"
+                        [timestamp]="message.timestamp"
+                ></app-outgoing-message>
+            </div>
+            <div *ngIf="message.userId !== user.userId">
+                <app-incoming-message
+                        [message]="message.message"
+                        [timestamp]="message.timestamp"
+                ></app-incoming-message>
+            </div>
+        </div>
+        <div id="autoScrollAnchor"></div>
+    </div>
+    <div class="type_msg">
+        <div class="input_msg_write">
+            <input type="text" autofocus name="text" class="write_msg" placeholder="Type a message" #box
+                   (keyup.enter)="sendMessage()" [(ngModel)]="newMessage"/>
+            <mat-icon class="msg_send_btn" (click)="sendMessage()"> message</mat-icon>
+        </div>
+    </div>
+</div>

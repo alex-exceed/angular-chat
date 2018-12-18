@@ -1,0 +1,22 @@
+<div class="inbox_people">
+    <div class="headind_srch">
+        <mat-card>
+            <mat-card-content>
+                Online users
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-list *ngFor="let user of users">
+        <app-user
+                [userId]="user.userId"
+                [name]="user.name"
+                [lastMessage]="user.lastMessage"
+                [timestamp]="user.timestamp"
+                [avatar]="user.avatar"
+        ></app-user>
+        <mat-divider></mat-divider>
+    </mat-list>
+    <button type="button" mat-button (click)="leaveChat()">
+        Leave chat
+    </button>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-form-field>
+        <input
+                (keyup.enter)="joinChat()"
+                [(ngModel)]="userName"
+                type="text"
+                title="User Name"
+                placeholder="User Name"
+                autofocus
+                matInput
+        />
+    </mat-form-field>
+    <button
+            mat-button
+            (click)="joinChat()"
+    >
+        Join Chat!
+    </button>
+</div>

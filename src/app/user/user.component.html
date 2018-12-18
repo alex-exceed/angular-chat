@@ -1,0 +1,14 @@
+<div class="chat_list">
+  <div class="chat_people">
+    <div class="chat_img">
+      <img src="{{avatar}}" alt="https://ptetutorials.com/images/user-profile.png">
+    </div>
+    <div class="chat_ib">
+      <div class="name">
+        <h5>{{name}}</h5>
+        <span>{{user.userId === userId ? '(You)' : ''}}</span>
+      </div>
+      <div class="chat_date">{{dF.formatDate(timestamp)}}</div>
+    </div>
+  </div>
+</div>
